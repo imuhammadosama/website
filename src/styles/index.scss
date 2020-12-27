@@ -1,0 +1,617 @@
+$blue: #26a2f9;
+$lightGrey: rgba(68, 68, 68, 0.44);
+$borderGrey: rgba(49, 34, 54, 0.12);
+$shadowGrey: rgba(26, 0, 35, 0.12);
+
+:root {
+  --background: linear-gradient(135deg, #26a2f9, #036ae0);
+  --background-hover: linear-gradient(135deg, #036ae0, #26a2f9);
+  --blue: #26a2f9;
+  --dark-blue: #036ae0;
+  --grey: rgba(68, 68, 68, 1);
+}
+
+::selection {
+  background: #3d3d3d;
+  color: white;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "SF Pro Display Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: local("SF Pro Display Regular"), local("SF-Pro-Display-Regular"),
+    url(../fonts/sf-pro-display-regular.woff) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display Bold";
+  font-style: normal;
+  font-weight: 600;
+  src: local("SF Pro Display Bold"), local("SF-Pro-Display-Bold"),
+    url(../fonts/sf-pro-display-bold.woff) format("woff");
+  font-display: swap;
+}
+
+body {
+  padding-top: 50px;
+  margin: 0px;
+}
+
+.heading {
+  font-family: "SF Pro Display Bold";
+  font-size: 45px;
+  text-align: center;
+  z-index: 9999999;
+}
+.title {
+  font-family: "SF Pro Display Regular";
+  font-size: 30px;
+}
+
+.contact {
+  padding: 40px;
+  padding-top: 300px;
+  padding-bottom: 300px;
+}
+
+.contact-icons > a > img {
+  width: 150px;
+}
+
+.row {
+  display: flex;
+  padding: 12px 0px 0px 15px;
+}
+
+.column {
+  padding-right: 15px;
+}
+
+/* Header */
+
+/* Portfolio */
+
+.portfolio {
+  padding-bottom: 15px;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.portfolio-img:hover {
+  opacity: 1;
+  border-color: $lightGrey;
+  box-shadow: 0 10px 10px 0 $borderGrey;
+  transition: border-color 83ms linear, box-shadow 83ms linear;
+  z-index: 999999;
+}
+
+.portfolio > .tabs {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+/* Footer */
+
+.fiverr {
+  display: flex;
+  align-self: center;
+}
+
+#fiverrIcon {
+  opacity: 0;
+}
+
+.contact-icons {
+  text-align: center;
+}
+
+.contact-icons > a {
+  padding-right: 20px;
+}
+
+.tab {
+  font-family: "SF Pro Display Regular";
+  padding: 7px 15px 7px 15px;
+  margin-right: 10px;
+  background: #333333;
+  color: #f5f5f7;
+  opacity: 0.85;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.tab:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, #26a2f9, #036ae0);
+}
+/* Style the tab */
+.tabs {
+  overflow: hidden;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Create an active/current tablink class */
+.tabs > .tab.active {
+  background: linear-gradient(135deg, #036ae0, #26a2f9);
+}
+
+.tabcontent {
+  display: none;
+}
+
+.logos {
+  transition: 0.2s ease-in-out;
+}
+
+.logo-left {
+  transform-origin: left;
+}
+.logo-right {
+  transform-origin: right;
+}
+
+.logos:hover {
+  transform: scale(1.2);
+  display: block;
+}
+
+/* Loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid $blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.col-1 {
+  flex: 1;
+}
+.col-2 {
+  flex: 2;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 0.5s;
+  animation-name: animatebottom;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: 0px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: 0px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#myDiv {
+  display: none;
+}
+
+/* Media */
+@media (max-width: 1366px) {
+  .contact {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+@media (max-width: 720px) {
+  .logo {
+    display: none;
+  }
+
+  .header {
+    align-self: center;
+    justify-content: center;
+  }
+  .menu {
+    padding-right: 0px;
+  }
+  .menu-items > li {
+    padding-right: 0px;
+    padding-left: 5px;
+  }
+
+  .column {
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+  .row {
+    padding: 10px 0px 0px 10px;
+    flex-wrap: wrap;
+  }
+  .column > a > img {
+    width: 100%;
+  }
+
+  .testimonials {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0px;
+  }
+
+  #fiverrIcon {
+    display: none;
+  }
+  .portfolio {
+    /* padding-top: 3px; */
+    padding-top: 38px;
+  }
+
+  .contact {
+    padding: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-icons > a > img {
+    width: 70px;
+  }
+  .heading > h1 {
+    font-size: 40px;
+  }
+  .menu-item {
+    padding-right: 20px;
+  }
+  .menu {
+    margin-left: 0px;
+  }
+}
+
+/* Files */
+.files {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.group {
+  padding-left: 40px;
+}
+
+.content {
+  padding-bottom: 10px;
+}
+
+.content > a {
+  font-family: "SF Pro Display Regular";
+  font-size: 20px;
+  color: $lightGrey;
+  text-decoration: none;
+}
+
+.content > a:hover {
+  color: $blue;
+}
+
+/* Testimonials */
+
+.files {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.group {
+  padding-left: 40px;
+}
+
+.content {
+  padding-bottom: 10px;
+}
+
+.content > a {
+  font-family: "SF Pro Display Regular";
+  font-size: 20px;
+  color: $lightGrey;
+  text-decoration: none;
+}
+
+.content > a:hover {
+  color: $blue;
+}
+
+/* Testimonials */
+.testimonials {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "SF Pro Display Regular";
+}
+
+.testimonial {
+  cursor: pointer;
+  display: flex;
+  padding: 50px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #f2f2f2;
+}
+
+.testimonial:hover {
+  border: 1px solid $lightGrey;
+  box-shadow: 0 18px 28px 0 rgba(26, 0, 35, 0.12);
+}
+
+.testimonialContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: column wrap;
+  align-self: center;
+}
+
+.testimonialImage {
+  padding-right: 10px;
+  width: 120px;
+  border-radius: 50px;
+}
+
+.testimonialImage > img {
+  width: 80px;
+  border-radius: 80px;
+}
+
+.testimonialName {
+  padding-top: 5px;
+  display: flex;
+  font-family: "SF Pro Display Bold";
+}
+.testimonialDescription {
+  padding-top: 1px;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+
+.animated {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

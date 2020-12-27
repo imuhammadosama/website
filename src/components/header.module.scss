@@ -1,0 +1,52 @@
+.nav {
+  display: flex;
+  padding: 10px;
+  background: #333333;
+  opacity: 0.95;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 9;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.logo > a {
+  height: 25px;
+}
+
+.menu > ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu {
+  display: flex;
+  font-family: "SF Pro Display Regular";
+  font-size: 15px;
+  margin-left: auto;
+  padding-right: 10px;
+  align-self: center;
+  justify-content: center;
+}
+.item {
+  display: block;
+  align-self: center;
+  justify-content: center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.item > a {
+  color: #f5f5f7;
+  opacity: 0.75;
+  text-decoration: none;
+}
+.item > a:hover {
+  opacity: 1;
+}
